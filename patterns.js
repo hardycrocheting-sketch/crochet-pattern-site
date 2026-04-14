@@ -163,4 +163,24 @@ const patterns = {
     { number: 147, side: "RS", instructions: "Gray x 122", totalStitches: 122 }
    ]
   }
-};
+};,
+  "cozy-heart": {
+    title: "Cozy Heart Pattern",
+    slug: "cozy-heart",
+    pdfUrl: "pattern.pdf",
+    graphImageUrl: "Stitch Pattern graph.png",
+    colors: {
+      Gray: "#c9c3c6",
+      Pink: "#f29aa3",
+      Black: "#1f1f1f",
+      Blue: "#6e88b7",
+      Teal: "#9edfe3",
+      Navy: "#3f4d7a",
+      White: "#ffffff"
+    },
+    rows: [
+      { number: 1, side: "RS", instructions: "Gray x 122", totalStitches: 122 },
+      { number: 2, side: "WS", instructions: "Gray x 122", totalStitches: 122 },
+      { number: 3, side: "RS", instructions: "Gray x 122", totalStitches: 122 }
+    ]
+  }
