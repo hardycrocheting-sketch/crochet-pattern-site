@@ -523,3 +523,22 @@ body.modal-open {
   border-radius: 6px;
   pointer-events: none;
 }
+.landing-page {
+  max-width: 900px;
+}
+
+.landing-hero {
+  text-align: left;
+  padding: 48px 32px;
+}
+
+.landing-hero .hero-actions {
+  margin-top: 28px;
+}
+
+.landing-hero .pdf-button,
+.landing-hero .mode-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
