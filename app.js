@@ -3,7 +3,9 @@ let currentRow = 0;
 let stitchMode = "SC";
 
 const storageKey = "crochet-pattern-progress";
-const pattern = patterns["stitch-colorwork"];
+const urlParams = new URLSearchParams(window.location.search);
+const patternSlug = urlParams.get("pattern") || "stitch-colorwork";
+const pattern = patterns[patternSlug] || patterns["stitch-colorwork"];
 
 const colorMap = pattern.colors;
 
@@ -62,6 +64,21 @@ function syncStitchModeSelect() {
   const stitchModeSelect = document.getElementById("stitchModeSelect");
   if (!stitchModeSelect) return;
   stitchModeSelect.value = stitchMode;
+}
+
+function renderPatternHeader() {
+  document.title = `${pattern.title} | Interactive Pattern`;
+
+  const heading = document.getElementById("patternPageHeading");
+  const intro = document.getElementById("patternPageIntro");
+
+  if (heading) {
+    heading.textContent = pattern.title;
+  }
+
+  if (intro) {
+    intro.textContent = `Follow the ${pattern.title.toLowerCase()} row by row online, or open the PDF if you prefer to print it.`;
+  }
 }
 
 function renderLegend() {
@@ -310,6 +327,7 @@ function render() {
       : "Mark Row Complete";
   });
 
+  renderPatternHeader();
   renderNotes();
   renderCurrentRow();
   renderPatternList();
