@@ -3,37 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Crochet Pattern</title>
+  <title>Welcome to Your Pattern</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="page">
-    <header class="hero">
-      <p class="eyebrow">Interactive Pattern</p>
-      <h1>Stitch Colorwork Pattern</h1>
+  <main class="page landing-page">
+    <section class="hero landing-hero">
+      <p class="eyebrow">Thank You</p>
+      <h1>Thank you for your purchase</h1>
       <p class="intro">
-        Follow the pattern row by row online, or download the PDF if you prefer
-        to print it.
+        Your interactive crochet pattern is ready. You can open the interactive
+        version to work through the rows step by step, or download the PDF if
+        you prefer a printable copy.
       </p>
 
       <div class="hero-actions">
-        <button type="button" class="mode-button" onclick="setMode('guided')">
-          Guided Mode
-        </button>
-        <button type="button" class="mode-button" onclick="setMode('full')">
-          Full Pattern
-        </button>
-        <button type="button" class="mode-button" onclick="openGraphModal()">
-          Open Full Graph
-        </button>
-        <a class="pdf-button" href="pattern.pdf" download>
-          Download PDF
+        <a class="pdf-button" href="pattern.html">Open Interactive Pattern</a>
+        <a
+          class="mode-button"
+          href="pattern.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open PDF
         </a>
       </div>
-    </header>
+    </section>
 
-    <section class="status-bar">
-      <p id="progressText">Row 1 of 13</p>
+    <section class="notes-panel">
+      <h2>Before You Start</h2>
+      <div class="notes-grid">
+        <div class="note-card">
+          <h3>Interactive Mode</h3>
+          <p>Work row by row, track progress, and view the highlighted graph row.</p>
+        </div>
+        <div class="note-card">
+          <h3>Stitch Options</h3>
+          <p>This pattern can be worked in Single Crochet (SC) or Half Double Crochet (HDC).</p>
+        </div>
+        <div class="note-card">
+          <h3>PDF Option</h3>
+          <p>If you prefer, you can open the PDF version instead of using the interactive tool.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
     </section>
 
     <section class="tools-panel">
