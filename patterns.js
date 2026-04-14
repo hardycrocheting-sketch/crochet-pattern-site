@@ -163,7 +163,7 @@ const patterns = {
     { number: 147, side: "RS", instructions: "Gray x 122", totalStitches: 122 }
    ]
   }
-};,
+},
   "cozy-heart": {
     title: "Cozy Heart Pattern",
     slug: "cozy-heart",
