@@ -306,6 +306,18 @@ body {
   height: 14px;
 }
 
+.c2c-chart {
+  gap: 6px;
+}
+
+.c2c-cell {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(47, 36, 31, 0.14);
+}
+
 .current-row-actions {
   margin-top: 20px;
 }
@@ -321,6 +333,55 @@ body {
 
 .pattern-list {
   padding: 0;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.shop-card {
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.shop-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f3e4d5 0%, #ead7c4 100%);
+}
+
+.shop-card-body {
+  padding: 18px;
+}
+
+.shop-card-tag {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.shop-card-body h3 {
+  margin: 0 0 10px;
+}
+
+.shop-card-body p {
+  line-height: 1.6;
+}
+
+.shop-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .row {
@@ -378,6 +439,10 @@ body {
     padding: 18px;
   }
 
+  .hero h1 {
+    font-size: 2rem;
+  }
+
   .current-row-header {
     flex-direction: column;
     align-items: stretch;
@@ -399,11 +464,36 @@ body {
 
   .tools-panel {
     align-items: stretch;
+    gap: 10px;
   }
 
   .hero-actions,
   .current-row-actions {
     flex-direction: column;
+  }
+
+  .current-row-actions {
+    gap: 10px;
+  }
+
+  .current-row-panel .stitch-chart {
+    padding: 12px;
+  }
+
+  .current-row-panel .stitch-cell {
+    flex: 0 0 12px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .c2c-cell {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .row {
+    padding: 14px;
   }
 }
 body.modal-open {
@@ -484,13 +574,28 @@ body.modal-open {
 
 .graph-highlight {
   position: absolute;
-  left: 12px;
-  right: 12px;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
   display: none;
   border: 2px solid rgba(184, 92, 56, 0.95);
   background: rgba(184, 92, 56, 0.16);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
   pointer-events: none;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+.graph-highlight.c2c-highlight {
+  pointer-events: none;
+}
+
+.graph-highlight svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
 @media (max-width: 640px) {
@@ -509,103 +614,16 @@ body.modal-open {
   .graph-close-button {
     width: 100%;
   }
-}
-.graph-highlight {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  display: none;
-  border: 2px solid rgba(184, 92, 56, 0.9);
-  background: rgba(184, 92, 56, 0.12);
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.6),
-    0 0 18px rgba(184, 92, 56, 0.18);
-  border-radius: 6px;
-  pointer-events: none;
-}
-.landing-page {
-  max-width: 900px;
-}
 
-.landing-hero {
-  text-align: left;
-  padding: 48px 32px;
-}
-
-.landing-hero .hero-actions {
-  margin-top: 28px;
-}
-
-.landing-hero .pdf-button,
-.landing-hero .mode-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.shop-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.shop-card {
-  display: grid;
-  grid-template-columns: minmax(220px, 320px) 1fr;
-  gap: 20px;
-  background: var(--surface-strong);
-  border: 1px solid var(--border);
-  border-radius: 22px;
-  overflow: hidden;
-}
-
-.shop-card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #f3ece4;
-}
-
-.shop-card-body {
-  padding: 22px;
-}
-
-.shop-card-tag {
-  margin: 0 0 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-
-.shop-card-body h3 {
-  margin: 0 0 10px;
-  font-size: 1.4rem;
-}
-
-.shop-card-body p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.shop-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-@media (max-width: 640px) {
-  .shop-card {
-    grid-template-columns: 1fr;
+  .graph-wrapper {
+    padding: 8px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .shop-card-actions {
-    flex-direction: column;
-  }
-
-  .shop-card-actions .pdf-button,
-  .shop-card-actions .mode-button {
-    width: 100%;
-    text-align: center;
+  .graph-image {
+    width: auto;
+    min-width: 720px;
+    max-width: none;
   }
 }
